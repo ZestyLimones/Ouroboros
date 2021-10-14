@@ -1,4 +1,4 @@
-// Function executes when login is clicked -> initiates the API call to login and sends user to their 
+// Function executes when login is clicked -> initiates the API call to login and sends user to their
 // dashboard on successful login.
 const loginFormHandler = async (event) => {
   event.preventDefault();
@@ -7,8 +7,8 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
-    const response = await API.login( email, password );
-    
+    const response = await API.login(email, password);
+
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
@@ -20,4 +20,3 @@ const loginFormHandler = async (event) => {
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
-
